@@ -13,6 +13,8 @@ myLength_acc :: [a] -> Int
 --Match one argument by calling the function with 2 arguments
 myLength_acc list = myLength_acc list 0
 --Define pattern matching against the 2 argument function call
+--function on right side of = acts as a closure and is local
+--name does not have to match left side of =
             where
                     myLength_acc [] n = n
 --Base case
