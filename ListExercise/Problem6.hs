@@ -1,3 +1,4 @@
+module ListExercise.Problem6 where
 -- Find out whether a list is a palindrome (same backwards and forwards)
 
 -- Function type definitions applies a class constraint on the type of a

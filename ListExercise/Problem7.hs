@@ -1,3 +1,4 @@
+module ListExercise.Problem7 where
 -- Flatten a nested list structure
 -- transform a list, possibly holding lists as elements, into a flat list
 -- by replacing each list with its elements
@@ -28,8 +29,8 @@ flatten (Elem x) = [x]
 flatten (List x) = concatMap flatten x
 
 -- without concat map
-flatten :: NestedList a -> [a]
-flatten (Elem a   )   = [a]
-flatten (List (x:xs)) = flatten x ++ flatten (List xs)
-flatten (List [])     = []
+flatten' :: NestedList a -> [a]
+flatten' (Elem a   )   = [a]
+flatten' (List (x:xs)) = flatten' x ++ flatten' (List xs)
+flatten' (List [])     = []
 

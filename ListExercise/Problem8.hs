@@ -1,3 +1,4 @@
+module ListExercise.Problem8 where
 -- Eliminate consecutive duplicates of list elements
 
 compress :: (Eq a) => [a] -> [a]
