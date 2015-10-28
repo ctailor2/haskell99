@@ -6,8 +6,15 @@ import ListExercise.Problem4
 -- of elements are encoded as lists (N E) where N is the number of duplicates of
 -- the element E
 
-data ListEncoding a = Encodings[(Int, a)] deriving Show
+data ListEncoding a = Encode(Int, a) deriving Show
 
-encodeList :: (Eq a) => [a] -> ListEncoding a
-encodeList list = Encodings(map ((\list -> (myLength list, (head list)))) $ pack list)
+encodeList':: (Eq a) => [a] -> [ListEncoding a]
+encodeList'list = map encode (pack list)
+              where
+                 encode list = Encode(myLength list, (head list))
+
+encodeList :: (Eq a) => [a] -> [(Int, a)]
+encodeList list = map encode (pack list)
+              where
+                 encode list = (myLength list, (head list))
 
